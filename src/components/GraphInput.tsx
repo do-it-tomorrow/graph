@@ -143,11 +143,11 @@ export function GraphInput({
           hover:border-border-hover lg:left-1/24 xl:left-5/200 xl:w-1/5 p-3
           space-y-3 z-10"
       >
-        <h3 className="font-bold text-lg">Graph Data</h3>
+        <h3 className="font-bold text-lg">图表数据</h3>
 
         <br />
 
-        <h4 className="text-base font-semibold">Current Nodes</h4>
+        <h4 className="text-base font-semibold">存在的节点</h4>
         <textarea
           wrap="off"
           rows={1}
@@ -165,7 +165,7 @@ export function GraphInput({
             text-current-nodes border-border w-auto no-scrollbar"
         ></textarea>
 
-        <h4 className="text-base font-semibold">Node Labels</h4>
+        <h4 className="text-base font-semibold">添加标签</h4>
         <textarea
           wrap="off"
           name="graphInputNodeLabels"
@@ -173,7 +173,7 @@ export function GraphInput({
           rows={1}
           onChange={processNodeLabels}
           onKeyDown={handleTextAreaKeyDown}
-          placeholder="TIP: '_' -> empty label"
+          placeholder="提示: '_' -> 跳过当前节点"
           className="bg-ovr font-semibold font-jetbrains resize-none border-2
             rounded-md px-2 py-1 border-single focus:outline-none text-lg
             border-border focus:border-border-active placeholder-placeholder
@@ -187,7 +187,7 @@ export function GraphInput({
             <span>
               {inputFormat === "edges" ? (
                 <span className="text-selected p-0 hover:cursor-pointer">
-                  Edges
+                  无父子关系
                 </span>
               ) : (
                 <span
@@ -200,7 +200,7 @@ export function GraphInput({
                     checkbox.checked = false;
                   }}
                 >
-                  Edges
+                  无父子关系
                 </span>
               )}
             </span>
@@ -208,7 +208,7 @@ export function GraphInput({
             <span>
               {inputFormat === "parentChild" ? (
                 <span className="text-selected p-0 hover:cursor-pointer">
-                  Parent-Child
+                  有父子关系
                 </span>
               ) : (
                 <span
@@ -221,7 +221,7 @@ export function GraphInput({
                     checkbox.checked = true;
                   }}
                 >
-                  Parent-Child
+                  有父子关系
                 </span>
               )}
             </span>
@@ -255,7 +255,7 @@ export function GraphInput({
             <span>
               {!directed ? (
                 <span className="text-selected p-0 hover:cursor-pointer">
-                  Undirected
+                  无向图
                 </span>
               ) : (
                 <span
@@ -268,7 +268,7 @@ export function GraphInput({
                     checkbox.checked = false;
                   }}
                 >
-                  Undirected
+                  无向图
                 </span>
               )}
             </span>
@@ -276,7 +276,7 @@ export function GraphInput({
             <span>
               {directed ? (
                 <span className="text-selected p-0 hover:cursor-pointer">
-                  Directed
+                  有向图
                 </span>
               ) : (
                 <span
@@ -289,7 +289,7 @@ export function GraphInput({
                     checkbox.checked = true;
                   }}
                 >
-                  Directed
+                  有向图
                 </span>
               )}
             </span>
@@ -323,7 +323,7 @@ export function GraphInput({
               : "hidden"
           }
         >
-          Roots
+          根节点
         </h4>
         <textarea
           wrap="off"
@@ -348,7 +348,7 @@ export function GraphInput({
               : "hidden"
           }
         >
-          Roots
+          根节点
         </h4>
         <textarea
           wrap="off"
@@ -371,7 +371,7 @@ export function GraphInput({
             inputFormat === "edges" ? "text-base font-semibold" : "hidden"
           }
         >
-          Edges
+          边
         </h4>
         <textarea
           wrap="off"
@@ -394,7 +394,7 @@ export function GraphInput({
             inputFormat === "parentChild" ? "text-base font-semibold" : "hidden"
           }
         >
-          Parent Array
+          父节点
         </h4>
         <textarea
           wrap="off"
@@ -417,7 +417,7 @@ export function GraphInput({
             inputFormat === "parentChild" ? "text-base font-semibold" : "hidden"
           }
         >
-          Child Array
+          子节点
         </h4>
         <textarea
           wrap="off"
@@ -441,7 +441,7 @@ export function GraphInput({
             inputFormat === "parentChild" ? "text-base font-semibold" : "hidden"
           }
         >
-          Edge Labels
+          边权
         </h4>
         <textarea
           wrap="off"
@@ -480,21 +480,21 @@ export function GraphInput({
               processGraphInput();
             }}
           >
-            Clear
+            清空
           </button>
           {inputStatus ? (
             <span
               className="font-jetbrains bg-format-ok rounded-md text-right px-2
                 py-1 inline"
             >
-              Format: OK
+              状态: 合法
             </span>
           ) : (
             <span
               className="font-jetbrains bg-format-bad rounded-md text-right px-2
                 py-1 inline"
             >
-              Format: BAD
+              状态: 非法
             </span>
           )}
         </div>
