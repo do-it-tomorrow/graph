@@ -157,7 +157,7 @@ export function GraphSettings({ directed, settings, setSettings }: Props) {
         <br />
 
         <SettingsToggleSection
-          title={"Components"}
+          title={"连通块"}
           leftLabel={"隐藏"}
           rightLabel={"显示"}
           toggleID={"settingsComponents"}
