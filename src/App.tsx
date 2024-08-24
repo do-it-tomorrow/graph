@@ -65,7 +65,7 @@ function App() {
           className="flex sm:top-2 lg:top-2 sm:right-2 lg:right-2 absolute
             border-2 border-border rounded-lg px-2 py-1 justify-between
             items-center hover:border-border-hover z-10"
-          href="https://github.com/anAcc22/another_graph_editor"
+          href="https://www.doittomorrow.xyz/post/guan-yu-another_graph_editor-de-shuo-ming"
         >
           {settings.darkMode ? (
             <img
